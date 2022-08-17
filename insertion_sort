@@ -1,0 +1,18 @@
+from time import sleep
+
+
+def insertion_sort(arr, reverse=False):
+    for i in range(len(arr)):
+        for j in range(len(arr) - 1):
+            if i == j:
+                continue
+            if arr[j] <= arr[i] <= arr[j + 1]:
+                tmp = arr[i]
+                del arr[i]
+                arr.insert(j + 1, tmp)
+    if reverse:
+        arr.reverse()
+        
+lst = [1, 5, 8, 2, 7, 6, 4, 3, 3]
+insertion_sort(lst, reverse=False)
+print(lst)
